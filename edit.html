@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit User</title>
+</head>
+<body>
+    <h2>Edit User</h2>
+    <form method="POST">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" value="{{ editUser['name'] }}" required><br><br>
+        <label for="role">Role:</label><br>
+        <input type="text" id="role" name="role" value="{{ editUser['role'] }}" required><br><br>
+        <label for="country">Country:</label><br>
+        <input type="text" id="country" name="country" value="{{ editUser['country'] }}" required><br><br>
+        <input type="hidden" name="userid" value="{{ editUser['userid'] }}">
+        <button type="submit">Update</button>
+    </form>
+    <p>{{ msg }}</p>
+    <a href="{{ url_for('users') }}">Back to users</a>
+</body>
+</html>
